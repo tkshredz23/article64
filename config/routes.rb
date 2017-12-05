@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'results/update_cities', as: 'update_cities'
+  get 'results/update_states', as: 'update_states'
+
+  root 'results#index'
 end

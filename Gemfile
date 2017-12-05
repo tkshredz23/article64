@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'country_select', '~> 3.1', '>= 3.1.1'
 gem 'city-state'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'jquery-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -24,7 +25,8 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug'
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -33,5 +35,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
