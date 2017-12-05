@@ -3,20 +3,22 @@ class ResultsController < ApplicationController
 
   def index
     @countries = Location.all_countries
-    @states = Location.all_states
-    @cities = Location.all_cities
+    @states = [] # Location.all_states
+    @cities = [] # Location.all_cities
 
   end
 
   def update_states
-    @cities = Location.all_states(params[:country], params[:state])
+    @states = Location.all_states(params[:country])
+
     respond_to do |format|
       format.js
     end
   end
 
   def update_cities
-    @cities = Location.all_cities(params[:country])
+    @cities = Location.all_cities(params[:country], params[:state])
+
     respond_to do |format|
       format.js
     end

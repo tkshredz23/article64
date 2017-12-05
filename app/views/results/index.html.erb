@@ -18,17 +18,19 @@
           <div class="form-group col-lg-3">
             <%= select_tag(
               :state, options_for_select(@states.collect { |state| [state, state]}),
-              title: "Select State <i class='fa fa-angle-down'></i>",
+              title: "All States <i class='fa fa-angle-down'></i>",
               class: 'listing-categories',
-              id: 'states_select'
+              id: 'states_select',
+              disabled: true
             ) %>
           </div>
           <div class="form-group col-lg-3">
             <%= select_tag(
               :state, options_for_select(@cities.collect { |city| [city, city]}),
-              title: "Select City <i class='fa fa-angle-down'></i>",
+              title: "All Cities <i class='fa fa-angle-down'></i>",
               class: 'listing-categories',
-              id: 'cities_select'
+              id: 'cities_select',
+              disabled: true
             ) %>
           </div>
           <div class="form-group col-lg-2">

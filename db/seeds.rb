@@ -18,6 +18,7 @@ l1 = Location.create(country: 'U.S.A', state: 'Massachussets', city: 'Boston', n
 l2 = Location.create(country: 'U.S.A', state: 'Massachussets', city: 'Lynn', name: 'kuna')
 l3 = Location.create(country: 'Canada', state: 'Quebec', city: 'Ontario')
 l4 = Location.create(country: 'Canada', state: 'Quebec', city: 'Montreal', name: 'mpems')
+l5 = Location.create(country: 'U.S.A', state: 'New Hampshire', city: 'Manchester')
 
 Vote.create(location: l1, candidate: c1, online_count: 12, offline_count: 43)
 Vote.create(location: l1, candidate: c2, online_count: 5, offline_count: 10)
@@ -27,3 +28,5 @@ Vote.create(location: l3, candidate: c1, online_count: 10, offline_count: 53)
 Vote.create(location: l3, candidate: c2, online_count: 10, offline_count: 53)
 Vote.create(location: l4, candidate: c1, online_count: 12, offline_count: 43)
 Vote.create(location: l4, candidate: c2, online_count: 10, offline_count: 53)
+Vote.create(location: l5, candidate: c1, online_count: 2, offline_count: 4)
+Vote.create(location: l5, candidate: c2, online_count: 10, offline_count: 13)

@@ -1,6 +1,4 @@
-console.log('here sucker')
-
 $("#cities_select").empty()
-  .append("<%= escape_javascript(render(partial: 'city', collection: @cities)) %>")
-
-$("#cities_select").selectpicker('refresh');
+  .append("<%= escape_javascript(render(partial: 'location', collection: @cities, as: :item)) %>")
+  .prop('disabled', false)
+  .selectpicker('refresh')

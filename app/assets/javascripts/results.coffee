@@ -4,11 +4,24 @@
 
 $ ->
   $(document).on 'change', '#countries_select', (evt) ->
-    $.ajax 'results/update_cities',
+    $.ajax 'results/update_states',
       type: 'GET'
       dataType: 'script'
       data: {
         country: $("#countries_select option:selected").val()
+      }
+      error: (jqXHR, textStatus, errorThrown) ->
+        console.log("AJAX Error: #{textStatus}")
+      success: (data, textStatus, jqXHR) ->
+        console.log("Dynamic country select OK!")
+
+  $(document).on 'change', '#states_select', (evt) ->
+    $.ajax 'results/update_cities',
+      type: 'GET'
+      dataType: 'script'
+      data: {
+        country: $("#countries_select option:selected").val(),
+        state: $("#states_select option:selected").val()
       }
       error: (jqXHR, textStatus, errorThrown) ->
         console.log("AJAX Error: #{textStatus}")
