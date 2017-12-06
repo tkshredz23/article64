@@ -1,237 +1,69 @@
 <!-- Hero Section-->
-<section style="background: url('assets/hero-bg.jpg') no-repeat;" class="hero d-flex align-items-center">
+<section style="background: url('assets/listing-hero-bg.jpg') no-repeat;" class="hero listing-single-hero d-flex align-items-end">
   <div class="container">
-    <p class="small-text-hero"><i class="icon-localizer text-primary mr-1"></i>Lorem ipsum <span class="text-primary">dolor sit</span> amet</p>
-    <h1>Let's <span class="text-primary">go    </span> anywhere</h1>
-    <p class="text-hero">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-    <div class="search-bar">
-      <%= form_tag('#', method: :get) do %>
-        <div class="row">
-          <div class="form-group col-lg-4">
-            <%= select_tag(
-              :country, options_for_select(@countries.map{|country| [country, country]}),
-              title: "Select Country <i class='fa fa-angle-down'></i>",
-              class: 'listing-categories',
-              id: 'countries_select'
-            ) %>
-          </div>
-          <div class="form-group col-lg-3">
-            <%= select_tag(
-              :state, options_for_select(@states.collect { |state| [state, state]}),
-              title: "All States <i class='fa fa-angle-down'></i>",
-              class: 'listing-categories',
-              id: 'states_select',
-              disabled: true
-            ) %>
-          </div>
-          <div class="form-group col-lg-3">
-            <%= select_tag(
-              :state, options_for_select(@cities.collect { |city| [city, city]}),
-              title: "All Cities <i class='fa fa-angle-down'></i>",
-              class: 'listing-categories',
-              id: 'cities_select',
-              disabled: true
-            ) %>
-          </div>
-          <div class="form-group col-lg-2">
-            <input type="submit" value="Search" class="submit">
-          </div>
+    <div class="content d-flex justify-content-between align-items-start flex-column flex-lg-row align-items-lg-end">
+    </div>
+  </div>
+</section>
+<div class="container">
+  <div class="row">
+    <!-- Votes     -->
+    <main class="col-lg-9">
+      <div class="widget opening-hours">
+        <header>
+          <h3 class="has-lines"><small>Open Status</small> Opening Hours </h3>
+        </header>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th><strong>First Name<strong></th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="days">
+          <div class="day d-flex justify-content-between"><strong>Candidat</strong><span>Vote</span><span>Vote en ligne</span><span>Total</span><span>%</span></div>
+          <div class="day d-flex justify-content-between">Tikky<span>Vote</span><span>Vote en ligne</span><span>Total</span><span>%</span></div>
+          <div class="day d-flex justify-content-between"><strong>Monday</strong><span>8:00 am - 6:00 pm</span><span>tuesday</span></div>
+          <div class="day d-flex justify-content-between"><strong>Tuesday</strong><span>8:00 am - 6:00 pm                         </span></div>
+          <div class="day d-flex justify-content-between"><strong>Wednesday</strong><span>8:00 am - 6:00 pm </span></div>
+          <div class="day d-flex justify-content-between"><strong>Thursday</strong><span>8:00 am - 6:00 pm </span></div>
+          <div class="day d-flex justify-content-between"><strong>Friday</strong><span>8:00 am - 6:00 pm </span></div>
+          <div class="day d-flex justify-content-between"><strong>Saturday</strong><span>8:00 am - 6:00 pm </span></div>
+          <div class="day d-flex justify-content-between"><strong>Sunday</strong><span>Closed</span></div>
         </div>
-      <% end %>
+      </div>
+    </main>
+    <aside class="col-lg-3">
+    <!-- About Listing-->
+    <div class="block about-listing">
+      <header>
+        <h3 class="has-lines"><small>About</small> About the Listing</h3>
+      </header>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
     </div>
+    </aside>
   </div>
-</section>
-<!-- Features Section-->
-<section class="features bg-gray">
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="icon"><i class="icon-antique-pavilion"></i></div>
-        <h4 class="h5">300 Places</h4>
-      </div>
-      <div class="col-sm-3">
-        <div class="icon"><i class="icon-calendar"></i></div>
-        <h4 class="h5">150 Events</h4>
-      </div>
-      <div class="col-sm-3">
-        <div class="icon"><i class="icon-gallery"></i></div>
-        <h4 class="h5">700 Photos</h4>
-      </div>
-      <div class="col-sm-3">
-        <div class="icon"><i class="icon-list"></i></div>
-        <h4 class="h5">15 Categories</h4>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Top Cities Section-->
-<section class="top-listings">
-  <div class="container">
-    <header>
-      <h2 class="has-lines"><small>Top cities</small> Our <span class="text-primary">top visited</span> cities</h2>
-      <p class="lead">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-    </header>
-    <div class="row d-flex align-items-stretch">
-      <!-- Item-->
-      <div class="col-lg-6"><a href="category.html">
-          <div class="item item-big">
-            <div class="image"><img src="assets/photo-top-big.jpg" alt="..." class="img-fluid"></div>
-            <div class="info d-flex align-items-end">
-              <div class="content">
-                <h3>Los Angeles</h3>
-                <p>Lorem ipsum dolor</p>
-                <ul class="rate list-inline">
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                </ul>
-              </div>
-            </div>
-            <div class="badge">featured</div>
-          </div></a></div>
-          <!-- Item-->
-          <div class="col-lg-6">
-            <div class="row">
-              <div class="col-md-6"><a href="category.html">
-                  <div class="item">
-                    <div class="image"><img src="assets/photo-top-1.jpg" alt="..." class="img-fluid"></div>
-                    <div class="info d-flex align-items-end">
-                      <div class="content">
-                        <h3>Barcelona</h3>
-                        <ul class="rate list-inline">
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div></a></div>
-                  <!-- Item-->
-                  <div class="col-md-6"><a href="category.html">
-                      <div class="item">
-                        <div class="image"><img src="assets/photo-top-2.jpg" alt="..." class="img-fluid"></div>
-                        <div class="info d-flex align-items-end">
-                          <div class="content">
-                            <h3>Hong Kong</h3>
-                            <ul class="rate list-inline">
-                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div></a></div>
-                      <!-- Item                    -->
-                      <div class="col-md-6"><a href="category.html">
-                          <div class="item">
-                            <div class="image"><img src="assets/photo-top-3.jpg" alt="..." class="img-fluid"></div>
-                            <div class="info d-flex align-items-end">
-                              <div class="content">
-                                <h3>New York</h3>
-                                <ul class="rate list-inline">
-                                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div></a></div>
-                          <!-- Item-->
-                          <div class="col-md-6"><a href="category.html">
-                              <div class="item">
-                                <div class="image"><img src="assets/photo-top-4.jpg" alt="..." class="img-fluid"></div>
-                                <div class="info d-flex align-items-end">
-                                  <div class="content">
-                                    <h3>Amsterdam</h3>
-                                    <ul class="rate list-inline">
-                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div></a></div>
-            </div>
-          </div>
-    </div>
-    <div class="row"> 
-      <div class="col-md-3"><a href="category.html">
-          <div class="item">
-            <div class="image"><img src="assets/photo-top-1.jpg" alt="..." class="img-fluid"></div>
-            <div class="info d-flex align-items-end">
-              <div class="content">
-                <h3>Barcelona</h3>
-                <ul class="rate list-inline">
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                </ul>
-              </div>
-            </div>
-          </div></a></div>
-          <!-- Item-->
-          <div class="col-md-3"><a href="category.html">
-              <div class="item">
-                <div class="image"><img src="assets/photo-top-2.jpg" alt="..." class="img-fluid"></div>
-                <div class="info d-flex align-items-end">
-                  <div class="content">
-                    <h3>Hong Kong</h3>
-                    <ul class="rate list-inline">
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                    </ul>
-                  </div>
-                </div>
-              </div></a></div>
-              <!-- Item                    -->
-              <div class="col-md-3"><a href="category.html">
-                  <div class="item">
-                    <div class="image"><img src="assets/photo-top-3.jpg" alt="..." class="img-fluid"></div>
-                    <div class="info d-flex align-items-end">
-                      <div class="content">
-                        <h3>New York</h3>
-                        <ul class="rate list-inline">
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div></a></div>
-                  <!-- Item                    -->
-                  <div class="col-md-3"><a href="category.html">
-                      <div class="item">
-                        <div class="image"><img src="assets/photo-top-3.jpg" alt="..." class="img-fluid"></div>
-                        <div class="info d-flex align-items-end">
-                          <div class="content">
-                            <h3>New York</h3>
-                            <ul class="rate list-inline">
-                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div></a></div>
-    </div><a href="#" class="btn btn-primary has-shadow has-wide-padding">View More    </a>
-  </div>
-</section>
+</div>

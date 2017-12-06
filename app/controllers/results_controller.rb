@@ -1,10 +1,13 @@
 class ResultsController < ApplicationController
-  before_action :location_select
 
   def index
+
+  end
+
+  def search
     @countries = Location.all_countries
-    @states = [] # Location.all_states
-    @cities = [] # Location.all_cities
+    @states = []
+    @cities = []
 
   end
 
@@ -22,10 +25,5 @@ class ResultsController < ApplicationController
     respond_to do |format|
       format.js
     end
-  end
-
-  private
-
-  def location_select
   end
 end
