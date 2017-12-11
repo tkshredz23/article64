@@ -6,8 +6,11 @@ class ResultsController < ApplicationController
     @location = loc_name
 
     unless @votes.any?
-
+      redirect_to results_not_found_path
     end
+  end
+
+  def not_found
   end
 
   def search
