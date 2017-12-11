@@ -8,25 +8,17 @@ class Location < ApplicationRecord
   default_scope { where(active: true) }
 
   class << self
-    def all_countries
-      Location.all.pluck(:country).uniq
-    end
 
-    def all_states(country = nil)
-      loc = Location.all
-
-      loc = Location.where(country: country) if country
-
-      loc.pluck(:state).uniq
-    end
-
-    def all_cities(country = nil, state = nil)
-      loc = Location.all
-
-      loc = Location.where(country: country) if country
-      loc = Location.where(state: state) if state
-
-      loc.pluck(:city).uniq
+    def query(opts = {})
+      loc = if opts[:city].present?
+        where('city ILIKE ?', opts[:city])
+      elsif opts[:state].present?
+        where('state ILIKE ?', opts[:state])
+      elsif opts[:country].present?
+        where('country ILIKE ?', opts[:country])
+      else
+        all
+      end
     end
 
     def all_locations(country = nil, state = nil, city = nil)
@@ -34,7 +26,7 @@ class Location < ApplicationRecord
 
       loc = loc.where(country: country) if country
       loc = loc.where(state: state) if state
-      loc = loc.where(ciy: city) if city
+      loc = loc.where(city: city) if city
 
       loc.pluck(:name).uniq
     end
