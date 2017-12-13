@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: "places";
-  src:url("../assets/places.eot");
-  src:url("../assets/places.eot?#iefix") format("embedded-opentype"),
-    url("../assets/places.woff") format("woff"),
-    url("../assets/places.ttf") format("truetype"),
-    url("../assets/places.svg#places") format("svg");
+  src:font-url('places.eot');
+  src:font-url('places.eot?#iefix') format("embedded-opentype"),
+      font-url('places.woff') format("woff"),
+      font-url('places.ttf') format("truetype"),
+      font-url('places.svg#places') format("svg");
   font-weight: normal;
   font-style: normal;
 
