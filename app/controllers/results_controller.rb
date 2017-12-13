@@ -3,7 +3,7 @@ class ResultsController < ApplicationController
   def index
     loc_ids = Location.query(query_params).pluck(:id)
     @votes = Vote.by_location(loc_ids)
-    @location = loc_name
+    @location = breadcrumb
 
     unless @votes.any?
       redirect_to results_not_found_path
@@ -39,13 +39,28 @@ class ResultsController < ApplicationController
     params.permit(:country, :state, :city)
   end
 
-  def loc_name
+  def breadcrumb
+    array = []
+
+    array << { url: "/", value: 'Accueil' }
+
     if query_params[:city].present?
-      query_params[:city]
+      location = Location.query(city: query_params[:city]).first
+
+      array << { url: "/results?country=#{location.country}", value: location.country }
+      array << { url: "/results?state=#{location.state}", value: location.state }
+      array << { url: "/results?city=#{location.city}", value: location.city }
     elsif query_params[:state].present?
-      query_params[:state]
+      location = Location.query(state: query_params[:state]).first
+
+      array << { url: "/results?country=#{location.country}", value: location.country }
+      array << { url: "/results?state=#{location.state}", value: location.state }
     elsif query_params[:country].present?
-      query_params[:country]
+      location = Location.query(country: query_params[:country]).first
+
+      array << { url: "/results?country=#{location.country}", value: location.country }
     end
+
+    array
   end
 end
